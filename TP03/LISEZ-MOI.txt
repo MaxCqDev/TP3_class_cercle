@@ -1,6 +1,6 @@
 Nom       : Criqui
 Prénom    : Maxime
-Groupe TP : ?
+Groupe TP : Classe i1
 
 
 Consigne :  Ci-dessous, répondre à la place des « ... ».
