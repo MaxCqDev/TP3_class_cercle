@@ -1,3 +1,4 @@
+import afficheur.Ecran;
 
 /** Construire le schéma proposé dans le sujet de TP avec des points,
   * et des segments.
@@ -32,6 +33,12 @@ public class ExempleSchema1 {
 		s23.afficher();		System.out.println();
 		s31.afficher();		System.out.println();
 		barycentre.afficher();	System.out.println();
+
+        //Afficher le shéma avec Ecran
+        Ecran ecran2 = new Ecran("ExempleEcran", 600, 400, 20);
+
+
+
 	}
 
 }
