@@ -131,5 +131,4 @@ public class SujetCercleTest {
 				new Point(1, 2), C1.getCentre());
 	}
 
-
 }

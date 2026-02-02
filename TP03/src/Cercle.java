@@ -12,7 +12,7 @@ public class Cercle {
         assert centre != null;
         assert rayon > 0;
 
-        this.centre=centre;
+        this.centre= new Point (centre.getX() , centre.getY());
         this.rayon=rayon;
         this.couleur = Color.blue;
     }
@@ -71,10 +71,10 @@ public class Cercle {
         return distance <= this.rayon;
     }
 
-
     public void translater(double dx, double dy) {
         this.centre.translater(dx, dy);
     }
+
     public void setCouleur(Color couleur){
         this.couleur = couleur;
     }
