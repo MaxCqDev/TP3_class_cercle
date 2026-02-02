@@ -1,7 +1,7 @@
 import java.awt.*;
 
 
-public class Cercle {
+public class Cercle implements Mesurable2D {
     private Point centre;
     private double rayon;
     private Color couleur;
@@ -41,8 +41,6 @@ public class Cercle {
         this.centre = new Point(centrex, centrey);
         this.rayon = p1.distance(p2) /2;
         this.couleur = c;
-
-
     }
 
     public void setRayon(double rayon){
@@ -78,14 +76,12 @@ public class Cercle {
     public void setCouleur(Color couleur){
         this.couleur = couleur;
     }
-    public double perimetre(){
-        double p = 2 * this.rayon * PI;
-        return p;
-    }
+
     public double aire(){
         return PI * (this.rayon * this.rayon);
     }
 
+    public double perimetre(){return 2*PI * this.rayon;}
 
     public static Cercle creerCercle(Point point1, Point point2){
         assert point1 != null;
