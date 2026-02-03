@@ -9,7 +9,7 @@ Consigne :  Ci-dessous, répondre à la place des « ... ».
 =====[ Temps ]==================================================================
 
 Temps passé sur la V1 : 3 heures 30 minutes
-Temps passé sur la V2 : ... heures ... minutes
+Temps passé sur la V2 : 3 heures 0 minutes
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
 
@@ -25,9 +25,9 @@ cercle --1,1--------------0,n--centre
 
 Comment est réalisée l'exigence E18 ?
 -------------------------------------
-Je sais pas, je suis justement bloque à ce test...
-...
-
+Le test E18 a été résolu par "this.centre= new Point (centre.getX() , centre.getY());"
+Il fallait créer un nouveau point pour éviter d'avoir une copie , pour pas que le cercle soit
+lié au point.
 
 
 =====[ Explications ]===========================================================
@@ -40,5 +40,10 @@ certains de leur getteurs et setteurs (ceux demande)
 3 constructs différents nécessaires afin de passé tout les test
 et différentes méthodes (contient/translate/perimetre/aire/creerCercle/toString)
 
-
-...
+Pour le CercleTest, la solution était simple.
+Il faallait vérifier chaque construct et savoir si les caractéristiques attendu lors de leur
+utilisation sot corrects.
+En plus je me suis aider de la structure des anciens Test JUnit4 pour faire les :
+- E12
+- E13
+- E14
