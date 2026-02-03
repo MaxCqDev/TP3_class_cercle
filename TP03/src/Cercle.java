@@ -44,9 +44,11 @@ public class Cercle implements Mesurable2D {
     }
 
     public void setRayon(double rayon){
+        assert rayon > 0;
         this.rayon = rayon;
     }
     public void setDiametre(double dia){
+        assert dia > 0;
         this.rayon = dia / 2 ;
     }
 
@@ -74,6 +76,7 @@ public class Cercle implements Mesurable2D {
     }
 
     public void setCouleur(Color couleur){
+        assert couleur != null;
         this.couleur = couleur;
     }
 
@@ -87,8 +90,8 @@ public class Cercle implements Mesurable2D {
         assert point1 != null;
         assert point2 != null;
         assert point1.distance(point2) > 0;
-        double rayon = point1.distance(point2) ;
 
+        double rayon = point1.distance(point2) ;
         return new Cercle(point1, rayon);
     }
 

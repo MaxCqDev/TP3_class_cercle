@@ -47,3 +47,5 @@ En plus je me suis aider de la structure des anciens Test JUnit4 pour faire les 
 - E12
 - E13
 - E14
+
+J'ai aussi du ajouter plusieurs assert afin de valider des test de rrobustesseCercle
