@@ -1,6 +1,53 @@
+File allumettes/Arbitre.java: 310 tokens, 66 lines (not NL-terminated)
 File allumettes/CoupInvalideException.java: 68 tokens, 39 lines
+File allumettes/Joueur.java: 81 tokens, 25 lines
+File allumettes/OperationInterditeException.java: 21 tokens, 9 lines (not NL-terminated)
+File allumettes/JeuProcuration.java: 78 tokens, 26 lines (not NL-terminated)
 File allumettes/ConfigurationException.java: 21 tokens, 16 lines
-File allumettes/Jouer.java: 174 tokens, 54 lines
+File allumettes/JeuToto.java: 135 tokens, 33 lines
+File allumettes/Jouer.java: 411 tokens, 118 lines
 File allumettes/Jeu.java: 23 tokens, 21 lines
-Total input: 4 files (4 new, 0 old), 286 tokens
+File allumettes/Tricheur.java: 121 tokens, 25 lines (not NL-terminated)
+File allumettes/Expert.java: 63 tokens, 17 lines
+File allumettes/Rapide.java: 53 tokens, 14 lines
+File allumettes/Humain.java: 144 tokens, 35 lines (not NL-terminated)
+File allumettes/Strategie.java: 17 tokens, 5 lines
+File allumettes/Naif.java: 42 tokens, 12 lines
+Total input: 15 files (15 new, 0 old), 1588 tokens
+
+allumettes/Expert.java: line 1-7 [32]
+allumettes/Rapide.java: line 1-7
+< package allumettes;
+< 
+< public class Expert implements Strategie {
+< 	@Override
+< 	public int getPrise(Jeu jeu, String nom) {
+< 		int alluRest = jeu.getNombreAllumettes();
+< 		int valeur = (alluRest - 1) % 4;
+---
+> package allumettes;
+> 
+> public class Rapide implements Strategie{
+> 	@Override
+> 	public int getPrise(Jeu jeu, String nom) {
+> 		int reste = jeu.getNombreAllumettes();
+> 		int max = Jeu.PRISE_MAX;
+
+allumettes/Arbitre.java: line 10-16 [27]
+allumettes/Joueur.java: line 4-10
+<     private Joueur joueur1;
+<     private Joueur joueur2;
+< 
+<     public Arbitre(Joueur j1, Joueur j2) {
+<         this.joueur1 = j1;
+<         this.joueur2 = j2;
+<     }
+---
+> 	private String nom;
+> 	private Strategie strategie;
+> 
+> 	public Joueur(String nom, Strategie strategie) {
+> 		this.nom = nom;
+> 		this.strategie = strategie;
+> 	}
 
