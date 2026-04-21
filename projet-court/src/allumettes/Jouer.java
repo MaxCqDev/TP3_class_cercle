@@ -6,25 +6,89 @@ package allumettes;
  * @version	$Revision: 1.5 $
  */
 public class Jouer {
+	
+	private static final int NB_ALLUMETTES_INITIAL = 13;
 
 	/** Lancer une partie. En argument sont donnés les deux joueurs sous
 	 * la forme nom@stratégie.
 	 * @param args la description des deux joueurs
 	 */
 	public static void main(String[] args) {
-		try {
-			verifierNombreArguments(args);
+	    try {
+	        verifierNombreArguments(args);
 
-			System.out.println("\n\tà faire !\n");
+	        boolean confiant = false;
+	        int offset = 0;
+	        if (args.length == 3) {
+	            if (!args[0].equals("-confiant")) {
+	                throw new ConfigurationException("Option inconnue : " + args[0]);
+	            }
+	            confiant = true;
+	            offset = 1;
+	        }
 
-		} catch (ConfigurationException e) {
-			System.out.println();
-			System.out.println("Erreur : " + e.getMessage());
-			afficherUsage();
-			System.exit(1);
-		}
+	        Joueur j1 = creerJoueur(args[offset]);
+	        Joueur j2 = creerJoueur(args[offset + 1]);
+
+	        Arbitre arbitre = new Arbitre(j1, j2);
+	        arbitre.setConfiant(confiant);
+	        Jeu jeu = new JeuToto(NB_ALLUMETTES_INITIAL);
+	        arbitre.arbitrer(jeu);
+
+	    } catch (ConfigurationException e) {
+	        System.out.println();
+	        System.out.println("Erreur : " + e.getMessage());
+	        afficherUsage();
+	        System.exit(1);
+	    }
 	}
+	
 
+    private static Joueur creerJoueur(String description) {
+        String[] parts = description.split("@");
+        if (parts.length != 2) {
+            throw new ConfigurationException(
+                    "Joueur mal décrit (attendu nom@strategie) : " + description);
+        }
+        String nom = parts[0];
+        String nomStrategie = parts[1];
+        Strategie strategie = creerStrategie(nomStrategie);
+        return new Joueur(nom, strategie);
+    }
+
+    private static Strategie creerStrategie(String nomStrategie) {
+        switch (nomStrategie) {
+            case "rapide":
+                return new Rapide();
+            case "naif":
+            	return new Naif();
+            	
+            case "tricheur":
+            	return new Tricheur();
+            	
+            case "expert":
+            	return new Expert();
+            	
+            case "humain":
+            	return new Humain();
+            	
+            default:
+                throw new ConfigurationException(
+                        "Stratégie inconnue : " + nomStrategie);
+        }
+    }
+    
+    
+    
+    
+    
+    /////////////////////////////////////////////////////////
+
+    
+    
+    
+    
+    
 	private static void verifierNombreArguments(String[] args) {
 		final int nbJoueurs = 2;
 		if (args.length < nbJoueurs) {

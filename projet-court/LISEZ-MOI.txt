@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
-Nom       : 
-Prénom    : 
-Groupe TP : 
+Nom       : Criqui
+Prénom    : Maxime
+Groupe TP : i1
 --------------------------------------------------------------------------------
 
 Consigne : Dans ce fichier, les « ... » indiquent les endroits à compléter.
@@ -16,7 +16,7 @@ prises en compte dans la notation du projet.
 Il faut remplacer les ... par des nombres.
 
 
-* Temps passé sur la V1 : ... heures ... minutes
+* Temps passé sur la V1 : 7 heures 30 minutes
 * Temps passé sur la V2 : ... heures ... minutes
 
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
@@ -28,8 +28,15 @@ Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 Pourquoi l'exception OperationInterditeException ne peut pas être définie
 comme vérifiée par le compilateur ?
 --------------------------------------------------------------------------------
+Rappel :
+Hérite de Exception -> Vérifié
+Hérite deRuntimeException -> NonVérifié
 
-...
+il faudrait appliquer cette exception dans l'interface Jeu.java afin de pouvoir l'appliquer dans JeuProcuration.java
+Une class qui hérite d'une class/interfcae, ne peut pas ajouter une exception dans son throws si le parent ne la déclare pas
+
+Mais la condition C19 nous interdit de la modifier, donc on peut pas.
+
 
 
 --------------------------------------------------------------------------------
@@ -38,15 +45,16 @@ exemple la stratégie lente (C13).  Pour plus de précision, on numérotera
 les étapes à faire.
 --------------------------------------------------------------------------------
 
-...
-
+1 Créer une nouclasse Lente qui implémentera l'interfface Stratégie
+2 Réécrire la méthode getPrise en retournant uniquement 1
+3 ne pas oublier de la rajouter dans notre switchcase dans Jouer.java
 
 --------------------------------------------------------------------------------
 Expliquer ce qui permet, dans votre conception, de changer dynamiquement
 (en cours d'exécution du programme) la stratégie d'un joueur (C14).
 --------------------------------------------------------------------------------
 
-...
+On a créer un setteu dans la classe joueur pour modifier la stratégie a ce but
 
 
 =====[ Explications ]===========================================================
@@ -56,6 +64,6 @@ Donner ici les explications supplémentaires utiles à la compréhension du
 travail rendu.
 --------------------------------------------------------------------------------
 
-...
+RAS
 
 --------------------------------------------------------------------------------
