@@ -1,7 +1,7 @@
 File allumettes/Arbitre.java: 310 tokens, 66 lines (not NL-terminated)
 File allumettes/CoupInvalideException.java: 68 tokens, 39 lines
 File allumettes/Joueur.java: 81 tokens, 25 lines
-File allumettes/OperationInterditeException.java: 21 tokens, 9 lines (not NL-terminated)
+File allumettes/OperationInterditeException.java: 21 tokens, 8 lines (not NL-terminated)
 File allumettes/JeuProcuration.java: 78 tokens, 26 lines (not NL-terminated)
 File allumettes/ConfigurationException.java: 21 tokens, 16 lines
 File allumettes/JeuToto.java: 135 tokens, 33 lines

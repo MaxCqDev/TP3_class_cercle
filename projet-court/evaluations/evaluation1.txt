@@ -1,4 +1,4 @@
-Date de l'évaluation : mar. 21 avril 2026 15:27:51 CEST
+Date de l'évaluation : lun. 15 juin 2026 10:42:09 CEST
 
 Nombre de similitudes : 2	(voir evaluation1/sim_java.txt)
 Les similitudes indiquent généralement du code à restructurer.
