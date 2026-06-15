@@ -14,7 +14,7 @@ public class JeuProcuration implements Jeu {
     }
 
     @Override
-    public void retirer(int nbPrises) throws CoupInvalideException {
+    public void retirer(int nbPrises) {
         throw new OperationInterditeException(
                 "Un joueur n'a pas le droit de retirer des allumettes.");
     }

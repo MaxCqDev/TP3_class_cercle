@@ -6,7 +6,7 @@ public class Arbitre {
 	public void setConfiant(boolean confiant) {
 	    this.confiant = confiant;
 	}
-	
+
     private Joueur joueur1;
     private Joueur joueur2;
 
@@ -48,7 +48,7 @@ public class Arbitre {
             } else {
                 jeuPourJoueur = new JeuProcuration(jeu);
             }
-            
+
             int nb = joueur.getPrise(jeuPourJoueur);
 
             String s = (nb > 1) ? "s" : "";

@@ -6,8 +6,9 @@ package allumettes;
  * @version	$Revision: 1.5 $
  */
 public class Jouer {
-	
+
 	private static final int NB_ALLUMETTES_INITIAL = 13;
+	private static final int NB_ARGS_MAX = 3;
 
 	/** Lancer une partie. En argument sont donnés les deux joueurs sous
 	 * la forme nom@stratégie.
@@ -19,7 +20,7 @@ public class Jouer {
 
 	        boolean confiant = false;
 	        int offset = 0;
-	        if (args.length == 3) {
+	        if (args.length == NB_ARGS_MAX) {
 	            if (!args[0].equals("-confiant")) {
 	                throw new ConfigurationException("Option inconnue : " + args[0]);
 	            }
@@ -42,11 +43,11 @@ public class Jouer {
 	        System.exit(1);
 	    }
 	}
-	
+
 
     private static Joueur creerJoueur(String description) {
         String[] parts = description.split("@");
-        if (parts.length != 2) {
+        if (parts.length != 2 || parts[0].isEmpty()) {
             throw new ConfigurationException(
                     "Joueur mal décrit (attendu nom@strategie) : " + description);
         }
@@ -62,33 +63,33 @@ public class Jouer {
                 return new Rapide();
             case "naif":
             	return new Naif();
-            	
+
             case "tricheur":
             	return new Tricheur();
-            	
+
             case "expert":
             	return new Expert();
-            	
+
             case "humain":
             	return new Humain();
-            	
+
             default:
                 throw new ConfigurationException(
                         "Stratégie inconnue : " + nomStrategie);
         }
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     /////////////////////////////////////////////////////////
 
-    
-    
-    
-    
-    
+
+
+
+
+
 	private static void verifierNombreArguments(String[] args) {
 		final int nbJoueurs = 2;
 		if (args.length < nbJoueurs) {

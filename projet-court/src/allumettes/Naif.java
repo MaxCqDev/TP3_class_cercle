@@ -2,7 +2,7 @@ package allumettes;
 import java.util.Random;
 
 public class Naif implements Strategie {
-	
+
     private Random random = new Random();
 
     @Override

@@ -1,6 +1,6 @@
 package allumettes;
 
-public class Rapide implements Strategie{
+public class Rapide implements Strategie {
 	@Override
 	public int getPrise(Jeu jeu, String nom) {
 		int reste = jeu.getNombreAllumettes();
