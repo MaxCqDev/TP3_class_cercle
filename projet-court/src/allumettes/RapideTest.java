@@ -3,17 +3,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class RapideTest {
-	
+
     private static class JeuStub implements Jeu {
         private final int reste;
-        JeuStub(int reste) { 
-        	this.reste = reste; 
+        JeuStub(int reste) {
+        	this.reste = reste;
         	}
-        public int getNombreAllumettes() { 
-        	return this.reste; 
+        public int getNombreAllumettes() {
+        	return this.reste;
         	}
         public void retirer(int nb) {
-        	
+
         }
     }
 

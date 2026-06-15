@@ -9,7 +9,7 @@ public class Expert implements Strategie {
 		if (valeur > Jeu.PRISE_MAX) {
 		    return Jeu.PRISE_MAX;
 		}
-		if (valeur>0) {
+		if (valeur > 0) {
 			return valeur;
 		}
 		return 1;

@@ -1,11 +1,11 @@
 package allumettes;
 
-public class JeuToto implements Jeu{
+public class JeuToto implements Jeu {
 
 	private int nbrAllumettes;
 
 	//permet de changer le nombre de départ d'allumettes de la parti
-	public JeuToto (int nbrAllumettes) {
+	public JeuToto(int nbrAllumettes) {
 		this.nbrAllumettes = nbrAllumettes;
 	}
 
