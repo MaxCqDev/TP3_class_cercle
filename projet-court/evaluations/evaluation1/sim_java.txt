@@ -1,19 +1,19 @@
-File allumettes/Arbitre.java: 310 tokens, 66 lines (not NL-terminated)
+File allumettes/Arbitre.java: 310 tokens, 66 lines
 File allumettes/CoupInvalideException.java: 68 tokens, 39 lines
 File allumettes/Joueur.java: 81 tokens, 25 lines
-File allumettes/OperationInterditeException.java: 21 tokens, 8 lines (not NL-terminated)
-File allumettes/JeuProcuration.java: 78 tokens, 26 lines (not NL-terminated)
+File allumettes/OperationInterditeException.java: 21 tokens, 8 lines
+File allumettes/JeuProcuration.java: 76 tokens, 26 lines
 File allumettes/ConfigurationException.java: 21 tokens, 16 lines
 File allumettes/JeuToto.java: 135 tokens, 33 lines
-File allumettes/Jouer.java: 411 tokens, 118 lines
+File allumettes/Jouer.java: 428 tokens, 119 lines
 File allumettes/Jeu.java: 23 tokens, 21 lines
-File allumettes/Tricheur.java: 121 tokens, 25 lines (not NL-terminated)
-File allumettes/Expert.java: 63 tokens, 17 lines
+File allumettes/Tricheur.java: 121 tokens, 25 lines
+File allumettes/Expert.java: 73 tokens, 17 lines
 File allumettes/Rapide.java: 53 tokens, 14 lines
-File allumettes/Humain.java: 144 tokens, 35 lines (not NL-terminated)
-File allumettes/Strategie.java: 17 tokens, 5 lines
+File allumettes/Humain.java: 144 tokens, 35 lines
+File allumettes/Strategie.java: 16 tokens, 5 lines
 File allumettes/Naif.java: 42 tokens, 12 lines
-Total input: 15 files (15 new, 0 old), 1588 tokens
+Total input: 15 files (15 new, 0 old), 1612 tokens
 
 allumettes/Expert.java: line 1-7 [32]
 allumettes/Rapide.java: line 1-7
@@ -23,11 +23,11 @@ allumettes/Rapide.java: line 1-7
 < 	@Override
 < 	public int getPrise(Jeu jeu, String nom) {
 < 		int alluRest = jeu.getNombreAllumettes();
-< 		int valeur = (alluRest - 1) % 4;
+< 		int valeur = (alluRest - 1) % (Jeu.PRISE_MAX + 1);//present dans l'interface
 ---
 > package allumettes;
 > 
-> public class Rapide implements Strategie{
+> public class Rapide implements Strategie {
 > 	@Override
 > 	public int getPrise(Jeu jeu, String nom) {
 > 		int reste = jeu.getNombreAllumettes();
