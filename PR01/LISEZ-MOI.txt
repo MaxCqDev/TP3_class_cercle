@@ -13,21 +13,36 @@ Temps passé sur la V2 : 3 heures 0 minutes
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
 
+Temps passé sur la V3 : 3 heures 30 minutes
+J'ai pris pas mal de temps à me remettre dans le sujet et corriger toutes les erreurs (22) de la checkstyle
++ correction final et relecture global -> NORMALEMENT tout les tests devront être au vert maintenant
 
 =====[ Questions ]==============================================================
 
 Indiquer la relation UML entre Cercle et le Point centre du cercle.
 -------------------------------------------------------------------
+V1
 Le cercle ne peut pas exister sans son centre, il nous permet de déterminer sa position
 cercle --1,1--------------0,n--centre
-...
+
+V3 (Vrai réponse)
+C'est une relation de composition
+Avec comme cardinalité :
+un Cercle --- un Point (un cercle possede un centre qui est un point et un point appartien à UN seul cercle)
 
 
 Comment est réalisée l'exigence E18 ?
 -------------------------------------
+V1
 Le test E18 a été résolu par "this.centre= new Point (centre.getX() , centre.getY());"
 Il fallait créer un nouveau point pour éviter d'avoir une copie , pour pas que le cercle soit
 lié au point.
+
+V3 (Vrai réponse)
+E18 est réalisé de sorte qu'on ne puisse pas modifier un cercle sans passer par SES methodes, permettant de garantir l'encapsulation.
+Cela est du est des "sécurités" :
+1 - Attribut private
+2 - On copie le centre en entré et en sorti (constructeur et getCentre() )
 
 
 =====[ Explications ]===========================================================
@@ -35,6 +50,7 @@ lié au point.
 (Facultatif) Donner ici les explications supplémentaires utiles à la
 compréhension du travail rendu.
 
+V1
 J'ai en premier lieu créer la class Cercle, avec 3 attributs (centre/rayon/couleur)
 certains de leur getteurs et setteurs (ceux demande)
 3 constructs différents nécessaires afin de passé tout les test
@@ -48,4 +64,22 @@ En plus je me suis aider de la structure des anciens Test JUnit4 pour faire les 
 - E13
 - E14
 
-J'ai aussi du ajouter plusieurs assert afin de valider des test de rrobustesseCercle
+J'ai aussi du ajouter plusieurs assert afin de valider des test de robustesseCercle
+
+
+
+V3 (vrai reponse)
+J'ai d'abord créé la classe Cercle avec 3 attributs (centre, rayon, couleur), 
+leurs getters/setters demandés, et les méthodes contient, translater, perimetre, aire, creerCercle et toString.
+toString réutilise le toString de Point.
+
+Il y a 3 constructeurs, mais diminué en 2  : 
+- le constructeur à 2 points appelle celui qui prend aussi la couleur
+- creerCercle réutilise le constructeur (centre, rayon).
+
+Pour CercleTest, comme l'exige C6, je teste uniquement E12, E13 et E14 (les 3 constructeurs)
+
+Pour chaque constructeur je vérifie le centre, le rayon et la couleur.
+
+Enfin, j'ai exprimé les préconditions des méthodes avec assert (C9).
+
