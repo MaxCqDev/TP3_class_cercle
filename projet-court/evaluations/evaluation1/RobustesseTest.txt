@@ -421,7 +421,7 @@ Le programme ne se termine pas.
 
 E
 
-Time: 3,265
+Time: 3,887
 There were 4 failures:
 1) testerNomNonDefini(RobustesseTest)
 java.lang.AssertionError: Le programme ne se termine pas.
