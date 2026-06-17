@@ -22,7 +22,7 @@ Le temps de se remettre dans un ancien code + faire les petites modifications
 
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 
-* Temps passé sur la V1_suite (projet3) : ...
+* Temps passé sur la V1_suite (projet3) : 7 heures 00 minutes
 
 
 =====[ Questions ]==============================================================
@@ -71,5 +71,33 @@ Chaque stratégie (rapide, naif, expert, humain, tricheur) est une classe qui im
 Pour la triche, j'ai utilisé le patron Procuration : le joueur reçoit JeuProcuration au lieu du vrai jeu, 
 donc s'il essaie de retirer des allumettes ça lève OperationInterditeException et l'arbitre l'arrête (sauf en -confiant). 
 Jouer lit la ligne de commande et gère les erreurs avec des exceptions(throws).
+
+Pour la suite du projet, il y a 3 parti :
+
+Parti 1 :
+On augmente notre tricheur en SuperTricheur, au lieu de jouer sur le jeu qu'on lui donne, il va jouer sur un nouveau jeu
+Ce qui permet de ne pas se faire choper par l'arbitre en mode normal
+
+Parti 2:
+En plus a'ajouter les coup en console , on les enregistre sur un fichier xml, assez simple.
+
+Parti 3 :
+C'est la parti la plus complexe et la plus longue
+Il faut gérer du multithreading, un thread main (getPrise()) et une autre thread qui est notre nouvelle fenetre swing
+On a d'abord créer l'interface et ses boutons , avec ses conditions etc
+Puis integrer le jeu en rafraichissant l'affichage apres un choix
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --------------------------------------------------------------------------------

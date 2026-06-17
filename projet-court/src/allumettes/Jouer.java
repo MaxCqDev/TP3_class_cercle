@@ -72,6 +72,12 @@ public class Jouer {
 
             case "humain":
             	return new Humain();
+            //projet 3
+            case "supertricheur":
+            	return new SuperTricheur();
+
+            case "swing":
+            	return new Swing();
 
             default:
                 throw new ConfigurationException(
@@ -102,7 +108,7 @@ public class Jouer {
 		}
 	}
 
-	/** Afficher des indications sur la manière d'exécuter cette classe. */
+	//indication initial
 	public static void afficherUsage() {
 		System.out.println("\n" + "Usage :"
 				+ "\n\t" + "java allumettes.Jouer joueur1 joueur2"

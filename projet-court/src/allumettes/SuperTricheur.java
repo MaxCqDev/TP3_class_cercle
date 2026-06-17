@@ -1,15 +1,16 @@
 package allumettes;
 
-public class Tricheur implements Strategie {
+public class SuperTricheur implements Strategie {
 
     private static final int RESTE_VOULU = 2;
 
-    //methode interface
+    //getPrise() -> interface Strategie
     @Override
     public int getPrise(Jeu jeu, String nom) {
         System.out.println("[Je triche...]");
-        viderJusquA(jeu, RESTE_VOULU);
-        System.out.println("[Allumettes restantes : " + jeu.getNombreAllumettes() + "]");
+        Jeu vraiJeu = OutilsJeu.vraiJeu(jeu);
+        viderJusquA(vraiJeu, RESTE_VOULU);
+        System.out.println("[Allumettes restantes : " + vraiJeu.getNombreAllumettes() + "]");
         return 1;
     }
 
@@ -19,7 +20,7 @@ public class Tricheur implements Strategie {
             try {
                 jeu.retirer(aRetirer);
             } catch (CoupInvalideException e) {
-                //?
+                throw new IllegalStateException(e);
             }
         }
     }
