@@ -1,19 +1,73 @@
-File allumettes/Arbitre.java: 310 tokens, 66 lines
+File allumettes/Deroulement.java: 294 tokens, 64 lines
+File allumettes/Arbitre.java: 397 tokens, 78 lines
 File allumettes/CoupInvalideException.java: 68 tokens, 39 lines
 File allumettes/Joueur.java: 81 tokens, 25 lines
 File allumettes/OperationInterditeException.java: 21 tokens, 8 lines
 File allumettes/JeuProcuration.java: 76 tokens, 26 lines
+File allumettes/OutilsJeu.java: 147 tokens, 33 lines
 File allumettes/ConfigurationException.java: 21 tokens, 16 lines
 File allumettes/JeuToto.java: 135 tokens, 33 lines
-File allumettes/Jouer.java: 428 tokens, 119 lines
+File allumettes/Jouer.java: 444 tokens, 125 lines
 File allumettes/Jeu.java: 23 tokens, 21 lines
-File allumettes/Tricheur.java: 121 tokens, 25 lines
+File allumettes/Tricheur.java: 121 tokens, 26 lines
+File allumettes/SuperTricheur.java: 136 tokens, 27 lines
 File allumettes/Expert.java: 73 tokens, 17 lines
 File allumettes/Rapide.java: 53 tokens, 14 lines
 File allumettes/Humain.java: 144 tokens, 35 lines
+File allumettes/Swing.java: 607 tokens, 116 lines
 File allumettes/Strategie.java: 16 tokens, 5 lines
 File allumettes/Naif.java: 42 tokens, 12 lines
-Total input: 15 files (15 new, 0 old), 1612 tokens
+Total input: 19 files (19 new, 0 old), 2899 tokens
+
+allumettes/Tricheur.java: line 11-21 [81]
+allumettes/SuperTricheur.java: line 12-22
+<         viderJusquA(jeu, RESTE_VOULU);
+<         System.out.println("[Allumettes restantes : " + jeu.getNombreAllumettes() + "]");
+<         return 1;
+<     }
+< 
+<     private void viderJusquA(Jeu jeu, int cible) {
+<         while (jeu.getNombreAllumettes() > cible) {
+<             int aRetirer = Math.min(Jeu.PRISE_MAX, jeu.getNombreAllumettes() - cible);
+<             try {
+<                 jeu.retirer(aRetirer);
+<             } catch (CoupInvalideException e) {
+---
+>         viderJusquA(vraiJeu, RESTE_VOULU);
+>         System.out.println("[Allumettes restantes : " + vraiJeu.getNombreAllumettes() + "]");
+>         return 1;
+>     }
+> 
+>     private void viderJusquA(Jeu jeu, int cible) {
+>         while (jeu.getNombreAllumettes() > cible) {
+>             int aRetirer = Math.min(Jeu.PRISE_MAX, jeu.getNombreAllumettes() - cible);
+>             try {
+>                 jeu.retirer(aRetirer);
+>             } catch (CoupInvalideException e) {
+
+allumettes/Tricheur.java: line 1-10 [36]
+allumettes/SuperTricheur.java: line 1-10
+< package allumettes;
+< 
+< public class Tricheur implements Strategie {
+< 
+<     private static final int RESTE_VOULU = 2;
+< 
+<     //methode interface
+<     @Override
+<     public int getPrise(Jeu jeu, String nom) {
+<         System.out.println("[Je triche...]");
+---
+> package allumettes;
+> 
+> public class SuperTricheur implements Strategie {
+> 
+>     private static final int RESTE_VOULU = 2;
+> 
+>     //getPrise() -> interface Strategie
+>     @Override
+>     public int getPrise(Jeu jeu, String nom) {
+>         System.out.println("[Je triche...]");
 
 allumettes/Expert.java: line 1-7 [32]
 allumettes/Rapide.java: line 1-7
@@ -33,21 +87,32 @@ allumettes/Rapide.java: line 1-7
 > 		int reste = jeu.getNombreAllumettes();
 > 		int max = Jeu.PRISE_MAX;
 
-allumettes/Arbitre.java: line 10-16 [27]
-allumettes/Joueur.java: line 4-10
-<     private Joueur joueur1;
-<     private Joueur joueur2;
-< 
-<     public Arbitre(Joueur j1, Joueur j2) {
-<         this.joueur1 = j1;
-<         this.joueur2 = j2;
-<     }
+allumettes/Arbitre.java: line 33-35 [28]
+allumettes/Arbitre.java: line 45-47
+<                         + courant.getNom() + " triche !");
+<                 this.deroulement.tricheur(courant.getNom());
+<                 this.deroulement.ecrire(FICHIER_XML);
 ---
-> 	private String nom;
-> 	private Strategie strategie;
+>         System.out.println(courant.getNom() + " gagne !");
+>         this.deroulement.gagnant(courant.getNom());
+>         this.deroulement.ecrire(FICHIER_XML);
+
+allumettes/Jouer.java: line 62-68 [24]
+allumettes/Jouer.java: line 70-77
+<             case "rapide":
+<                 return new Rapide();
+<             case "naif":
+<             	return new Naif();
+< 
+<             case "tricheur":
+<             	return new Tricheur();
+---
+>             case "expert":
+>             	return new Expert();
 > 
-> 	public Joueur(String nom, Strategie strategie) {
-> 		this.nom = nom;
-> 		this.strategie = strategie;
-> 	}
+>             case "humain":
+>             	return new Humain();
+>             //projet 3
+>             case "supertricheur":
+>             	return new SuperTricheur();
 

@@ -1,9 +1,9 @@
-Date de l'évaluation : mar. 16 juin 2026 00:53:13 CEST
+Date de l'évaluation : mer. 17 juin 2026 23:32:21 CEST
 
-Nombre de similitudes : 2	(voir evaluation1/sim_java.txt)
+Nombre de similitudes : 5	(voir evaluation1/sim_java.txt)
 Les similitudes indiquent généralement du code à restructurer.
 
-Erreurs checkstyle (différentes/types) : 1/1	(voir evaluation1//checkstyle.txt)
+Erreurs checkstyle (différentes/types) : 4/3	(voir evaluation1//checkstyle.txt)
 
 Classe OperationInterditeException : OperationInterditeException (ok)
 
@@ -17,11 +17,18 @@ Throwable, Exception et RuntimeException ne devraient pas être récupérées ca
 AssertionError ne doit pas être récupérée... ok
 
 Autres exceptions récupérées :
-  | allumettes/Arbitre.java:59:            } catch (CoupInvalideException e) {
+  | allumettes/Deroulement.java:24:        } catch (ParserConfigurationException e) {
+  | allumettes/Deroulement.java:60:        } catch (TransformerException e) {
+  | allumettes/Arbitre.java:70:            } catch (CoupInvalideException e) {
+  | allumettes/OutilsJeu.java:18:        } catch (ReflectiveOperationException e) {
+  | allumettes/OutilsJeu.java:29:        } catch (ReflectiveOperationException e) {
   | allumettes/Jouer.java:39:       } catch (ConfigurationException e) {
-  | allumettes/Tricheur.java:20:            } catch (CoupInvalideException e) {
+  | allumettes/Tricheur.java:21:            } catch (CoupInvalideException e) {
+  | allumettes/SuperTricheur.java:22:            } catch (CoupInvalideException e) {
   | allumettes/Humain.java:19:                } catch (NumberFormatException e) {
   | allumettes/Humain.java:31:        } catch (CoupInvalideException e) {
+  | allumettes/Swing.java:32:                } catch (InterruptedException e) {
+  | allumettes/Swing.java:112:        } catch (NumberFormatException e) {
 
 Utilisation de 'Scanner' : ok
   | allumettes/Humain.java:6:    private static final Scanner SCANNER = new Scanner(System.in);

@@ -1,3 +1,6 @@
 Début de la vérification...
+[ERROR] SuperTricheur.java:13: La ligne excède 90 caractères (trouvé 93). [LineLength]
 [ERROR] Expert.java:7:58: Il manque une espace après ';'. [WhitespaceAfter]
+[ERROR] Swing.java:24:29: 'jeu' masque un attribut. [HiddenField]
+[ERROR] Swing.java:104: La ligne excède 90 caractères (trouvé 92). [LineLength]
 Vérification terminée.
